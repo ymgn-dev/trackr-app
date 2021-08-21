@@ -6,9 +6,20 @@
 pub global activate grinder
 ```
 
-+ build_runnerの実行(@DefaultTask)
+## build_runnerの実行
 ```shell
 grind
+```
+
+## アプリ起動
+### debug-dev
+```shell
+grind debug-dev
+```
+
+### release-prod
+```shell
+grind release-prod
 ```
 
 # Flavor生成
