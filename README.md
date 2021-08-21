@@ -14,12 +14,12 @@ grind
 ## アプリ起動
 ### debug-dev
 ```shell
-grind debug-dev
+flutter run --debug --flavor dev --dart-define=FLAVOR=dev -t lib/main-dev.dart
 ```
 
 ### release-prod
 ```shell
-grind release-prod
+flutter run --release --flavor prod --dart-define=FLAVOR=prod -t lib/main-prod.dart
 ```
 
 # Flavor生成
