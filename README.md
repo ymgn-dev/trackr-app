@@ -37,3 +37,20 @@ flutter run --release --flavor prod --dart-define=FLAVOR=prod -t lib/main-prod.d
 flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons-dev.yaml
 ```
 
+# リリース
+## キーストアの生成
+生成時に指定したパスワードはどこかにメモしておくこと。
+```shell
+cd android/app/
+keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+```
+
+## Android署名情報を追記
+`android/keystore.properties`を以下のような内容で作成する。
+パスワードやエイリアス、ファイル名は適切なものに変更する。
+```shell
+storePassword=password
+keyPassword=password
+keyAlias=key
+storeFile=key.jks
+```
