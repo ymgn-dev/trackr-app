@@ -54,3 +54,7 @@ keyPassword=password
 keyAlias=key
 storeFile=key.jks
 ```
+
+# CI/CD
+`Codemagic`を導入しています。
+mainブランチへのpushで自動ビルド, Slackへ通知されます。
