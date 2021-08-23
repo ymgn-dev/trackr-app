@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -147,7 +147,6 @@
 				DFAB51927DC26727A1688B1E /* Pods-Runner.profile-prod.xcconfig */,
 				44B204BC0B6A5C94C5D08E2C /* Pods-Runner.release-prod.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -332,6 +331,7 @@
 			baseConfigurationReference = A2376E4C16EDAE1C8E341005 /* Pods-Runner.debug-dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Debug-dev";
@@ -342,6 +342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
 				ASSET_PREFIX = dev;
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Profile-dev";
@@ -351,6 +352,7 @@
 			baseConfigurationReference = 13E0CB07A6F07FB6CEC3184E /* Pods-Runner.release-dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Release-dev";
@@ -360,6 +362,7 @@
 			baseConfigurationReference = D67BB410310E426FD736E34B /* Pods-Runner.debug-prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Debug-prod";
@@ -370,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
 				ASSET_PREFIX = prod;
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Profile-prod";
@@ -379,6 +383,7 @@
 			baseConfigurationReference = 44B204BC0B6A5C94C5D08E2C /* Pods-Runner.release-prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-$(ASSET_PREFIX)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Release-prod";
@@ -587,6 +592,7 @@
 				ASSET_PREFIX = dev;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -931,6 +937,7 @@
 				ASSET_PREFIX = dev;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -954,6 +961,7 @@
 				ASSET_PREFIX = prod;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = VAZRF78FLN;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
