@@ -46,7 +46,7 @@ keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -
 ```
 
 ## Android署名情報を追記
-`android/keystore.properties`を以下のような内容で作成する。
+`android/key.properties`を以下のような内容で作成する。
 パスワードやエイリアス、ファイル名は適切なものに変更する。
 ```shell
 storePassword=password
