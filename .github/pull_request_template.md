@@ -1,11 +1,5 @@
-<!-- あくまでテンプレートなので必ずしもすべての項目を埋めなくてよい -->
+<!-- いずれかのテンプレートを使用すること -->
 
-# 関連するIssues
-<!-- このPRと紐付けてCloseしたいIssuesがある場合は書く -->
-<!-- Closes #1 ←#1をCloseする -->
+[機能タスクのPR作成用テンプレート](https://github.com/ymgn9314/trackr-app/pull/new?template=task--feature.md&title=&labels=機能&assignees=)
 
-# 変更内容
-<!-- ビューの変更がある場合はスクショによる比較などがあるとわかりやすい -->
-
-# 補足
-<!-- レビューをする際に見てほしい点、ローカル環境で試す際の注意点など -->
+[バグタスクのPR作成用テンプレート](https://github.com/ymgn9314/trackr-app/pull/new?template=task--bug.md&title=&labels=バグ&assignees=)
