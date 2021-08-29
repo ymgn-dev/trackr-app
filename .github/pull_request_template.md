@@ -1,5 +1,9 @@
-<!-- いずれかのテンプレートを使用すること -->
+# プロダクトバックログ
+<!-- タスク分解前のプロダクトバックログのIssue番号を書く -->
+<!-- 例: #- -->
+#-
 
-[機能タスクのPR作成用テンプレート](https://github.com/ymgn9314/trackr-app/pull/new?template=task--feature.md&title=&labels=機能&assignees=)
-
-[バグタスクのPR作成用テンプレート](https://github.com/ymgn9314/trackr-app/pull/new?template=task--bug.md&title=&labels=バグ&assignees=)
+# 関連するタスク
+<!-- PRに関連するタスクのIssue番号を書く -->
+<!-- 例: Closes #1 -->
+Closes #-
