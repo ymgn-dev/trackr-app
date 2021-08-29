@@ -1,5 +1,5 @@
 ---
-name: 'Task: bug'
+name: 'Bug task'
 about: バグタスクの作成用テンプレート
 title: ''
 labels: バグ

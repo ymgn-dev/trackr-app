@@ -1,5 +1,5 @@
 ---
-name: 'Task: feature'
+name: 'Feature task'
 about: 機能タスクの作成用テンプレート
 title: ''
 labels: 機能
