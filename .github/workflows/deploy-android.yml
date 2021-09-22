@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
+
+      # Setup Flutter environment
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
@@ -25,13 +27,8 @@ jobs:
         run: pub global activate grinder
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
-  setup-secrets:
-    name: Setup secrets
-    needs: [setup-flutter]
-    runs-on: macos-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.4
+
+        # Setup secrets
       - name: Generate key.jks
         run: |
           touch android/key.jks
@@ -48,13 +45,8 @@ jobs:
           echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
           echo 'storeFile=key.jks' > android/key.properties
           echo 'serviceAccountFile=service-account-key.json' >> android/key.properties
-  publish-to-store:
-    name: Publish to store
-    needs: [setup-secrets]
-    runs-on: macos-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.4
+
+      # Publish to store
       - name: Build Android App Bundle
         run: flutter build appbundle --flavor=prod --target=lib/main-prod.dart --build-number ${GITHUB_RUN_NUMBER}
       - name: Upload to store
