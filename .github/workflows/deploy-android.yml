@@ -31,4 +31,23 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Generate key.jks
-        run:
+        run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/key.jks
+      - name: Generate Service Account key
+        run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-key.json
+      - name: Generate key.properties
+        run: |
+          echo 'storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}' >> android/key.properties
+          echo 'keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}' >> android/key.properties
+          echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
+          echo 'storeFile=key.jks' > android/key.properties
+          echo 'serviceAccountFile=service-account-key.json' >> android/key.properties
+  publish-to-store:
+    name: Publish to store
+    needs: [setup-secrets]
+    runs-on: macos-latest
+    steps:
+      - name: Build Android App Bundle
+        run: flutter build appbundle --flavor=prod --target=lib/main-prod.dart --build-number ${GITHUB_RUN_NUMBER}
+      - name: Upload to store
+        run: ./gradlew publishBundle
+        working-directory: ./android
