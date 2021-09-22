@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  setup-flutter:
-    name: Setup Flutter
+  deploy-android:
+    name: Deploy Android
     runs-on: macos-latest
     steps:
       - name: Checkout
@@ -28,7 +28,7 @@ jobs:
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
-        # Setup secrets
+      # Setup secrets
       - name: Generate key.jks
         run: |
           touch android/key.jks
@@ -45,6 +45,9 @@ jobs:
           echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
           echo 'storeFile=../key.jks' > android/key.properties
           echo 'serviceAccountFile=../service-account-key.json' >> android/key.properties
+          ls
+          cat android/key.properties
+          pwd
 
       # Publish to store
       - name: Build Android App Bundle
