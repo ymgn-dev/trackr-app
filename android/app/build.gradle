@@ -1,3 +1,7 @@
+plugins {
+    id "com.github.triplet.play" version "3.6.0"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -29,11 +33,6 @@ def keystoreProperties = new Properties()
 def keystorePropertiesFile = rootProject.file('key.properties')
 if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
-plugins {
-    id("com.android.application")
-    id("com.github.triplet.play") version "3.6.0"
 }
 
 android {
@@ -87,11 +86,11 @@ android {
             signingConfig signingConfigs.release
         }
     }
+}
 
-    play {
-        defaultToAppBundles.set(true)
-        serviceAccountCredentials = rootProject.file (keystoreProperties['serviceAccountFile'])
-    }
+play {
+    defaultToAppBundles.set(true)
+    serviceAccountCredentials.set(rootProject.file (keystoreProperties['serviceAccountFile']))
 }
 
 flutter {
@@ -101,5 +100,3 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-
-

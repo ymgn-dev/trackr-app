@@ -43,8 +43,8 @@ jobs:
           echo 'storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}' >> android/key.properties
           echo 'keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}' >> android/key.properties
           echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
-          echo 'storeFile=key.jks' > android/key.properties
-          echo 'serviceAccountFile=service-account-key.json' >> android/key.properties
+          echo 'storeFile=../key.jks' > android/key.properties
+          echo 'serviceAccountFile=../service-account-key.json' >> android/key.properties
 
       # Publish to store
       - name: Build Android App Bundle
