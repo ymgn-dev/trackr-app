@@ -31,11 +31,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Generate key.jks
+        run: touch android/key.jks
         run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/key.jks
       - name: Generate Service Account key
         run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-key.json
       - name: Generate key.properties
         run: |
+          touch android/key.properties
           echo 'storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}' >> android/key.properties
           echo 'keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}' >> android/key.properties
           echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
