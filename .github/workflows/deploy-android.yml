@@ -40,14 +40,7 @@ jobs:
       - name: Generate key.properties
         run: |
           touch android/key.properties
-          echo 'storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}' >> android/key.properties
-          echo 'keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}' >> android/key.properties
-          echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
-          echo 'storeFile=../key.jks' > android/key.properties
-          echo 'serviceAccountFile=../service-account-key.json' >> android/key.properties
-          ls
-          cat android/key.properties
-          pwd
+          echo -n ${{ secrets.ANDROID_KEY_PROPERTIES }} | base64 -d > android/key.properties
 
       # Publish to store
       - name: Build Android App Bundle
