@@ -13,7 +13,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v1
         with:
-          java-version: '12.x'
+          java-version: '16.x'
       - name: Flutter action
         uses: subosito/flutter-action@v1
         with:
@@ -25,10 +25,10 @@ jobs:
         run: pub global activate grinder
       - name: Run build_runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
-  # setup-secrets:
-  #   name: Setup secrets
-  #   needs: [setup-flutter]
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Generate key.jks
-  #       run:
+  setup-secrets:
+    name: Setup secrets
+    needs: [setup-flutter]
+    runs-on: macos-latest
+    steps:
+      - name: Generate key.jks
+        run:
