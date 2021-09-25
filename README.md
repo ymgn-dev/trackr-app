@@ -53,6 +53,7 @@ storePassword=password
 keyPassword=password
 keyAlias=key
 storeFile=key.jks
+serviceAccountFile=service-account-key.json
 ```
 
 # CI/CD
