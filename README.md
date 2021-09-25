@@ -41,7 +41,7 @@ flutter pub run flutter_launcher_icons:main -f flutter_launcher_icons-dev.yaml
 ## キーストアの生成
 生成時に指定したパスワードはどこかにメモしておくこと。
 ```shell
-cd android/app/
+cd android/
 keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
@@ -56,5 +56,5 @@ storeFile=key.jks
 ```
 
 # CI/CD
-`Codemagic`を導入しています。
-mainブランチへのpushで自動ビルド, Slackへ通知されます。
+`GitHub Actions`を導入しています。
+mainブランチへのpushで.aabの生成とGoogle Play Consoleへの自動アップロードが行われます。
